@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Validatecb;
+use App\Http\Requests\VlidationRegester;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +19,7 @@ class LoginController extends Controller
     public function showregister(){
         return view('Register');
     }
-    public function register(Validatecb $request){
+    public function register(VlidationRegester $request){
         $user = new User();
         $user->name = $request->input('username') ;
         $user->email = $request->input('email') ;

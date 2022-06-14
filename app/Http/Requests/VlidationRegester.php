@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class VlidationRegester extends FormRequest
 {
@@ -13,7 +14,7 @@ class VlidationRegester extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +25,15 @@ class VlidationRegester extends FormRequest
     public function rules()
     {
         return [
-            //
+            'email' => ['required', 'min:3','max:20',
+                Rule::unique('users')->withoutTrashed()],
+            'password' => 'required',
+        ];
+    }
+    public function messages(){
+        return[
+            'email.required' => __('validation.email'),
+            'password.required' => __('validation.password'),
         ];
     }
 }
