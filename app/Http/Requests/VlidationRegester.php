@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class Validatecb extends FormRequest
+class VlidationRegester extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class Validatecb extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,15 +24,7 @@ class Validatecb extends FormRequest
     public function rules()
     {
         return [
-            'email' => ['required', 'min:3'],
-            'password' => 'required',
-        ];
-    }
-
-    public function messages(){
-        return[
-            'email.required' => __('validation.email'),
-            'password.required' => __('validation.password'),
+            //
         ];
     }
 }

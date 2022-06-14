@@ -107,7 +107,7 @@ return [
     'prohibited_unless' => 'The :attribute field is prohibited unless :other is in :values.',
     'prohibits' => 'The :attribute field prohibits :other from being present.',
     'regex' => 'The :attribute format is invalid.',
-    'required' => ':attribute không chính xác',
+    'required' => 'Vui lòng nhập :attribute',
     'required_array_keys' => 'The :attribute field must contain entries for: :values.',
     'required_if' => 'The :attribute field is required when :other is :value.',
     'required_unless' => 'The :attribute field is required unless :other is in :values.',
@@ -129,7 +129,7 @@ return [
     'uploaded' => 'The :attribute failed to upload.',
     'url' => 'The :attribute must be a valid URL.',
     'uuid' => 'The :attribute must be a valid UUID.',
-    'username' => 'Vui lòng nhập tên đăng nhập.',
+    'email' => 'Vui lòng nhập tên đăng nhập.',
     'password' => 'Vui lòng nhập mật khẩu để tiếp tục.',
 
     /*

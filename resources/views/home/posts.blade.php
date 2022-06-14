@@ -11,6 +11,7 @@
 <body>
 <div class="table-agile-info">
     <div class="panel panel-default">
+        <a style="font-size: 20px;background-color: red;width: 120px;height: 80px" href="{{url('post/create')}}">Thêm bài viết</a>
         <div class="panel-heading">
             Danh Sách Bài Viết
         </div>
@@ -29,12 +30,11 @@
                         <td>{{$value->title}}</td>
                         <td>{{$value->content}}</td>
                         <td>
-{{--                            <a href="showedit-category-product/{{$value->post_id}}" class="active" ui-toggle-class="">--}}
-{{--                                <i class="fa fa-pencil-square-o text-success text-active"></i>--}}
-{{--                            </a>--}}
-                            <a onclick="return confirm('Bạn có chắc muốn xóa!')" href="{{$value->post_id}}" class="active" ui-toggle-class="">
-                                Xóa
-                            </a>
+                            <form action="{{url('post/'.$value->post_id)}}" method="POST">
+                                @method('DELETE')
+                                @csrf
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
                         </td>
                     </tr>
                     </tbody>
