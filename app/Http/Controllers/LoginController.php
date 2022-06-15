@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Session;
 class LoginController extends Controller
 {
     public function index(){
-        User::find(10)->delete();
+        User::find(20)->delete();
         return redirect()->back();
     }
     public function showregister(){
