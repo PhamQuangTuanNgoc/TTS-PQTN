@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\SendMailEvent;
 use App\Http\Requests\Validatecb;
 use App\Http\Requests\VlidationRegester;
 use Illuminate\Http\Request;
@@ -12,6 +13,9 @@ use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
+    public function send_email(){
+        event(new SendMailEvent("Your account has been send"));
+    }
     public function index(){
         User::find(20)->delete();
         return redirect()->back();
@@ -26,6 +30,7 @@ class LoginController extends Controller
         $user->password = bcrypt($request->input('password'));
         $user->save();
         Session::flash('success', 'Đăng kí thành công');
+        event(new SendMailEvent($request->input('email')));
         return redirect()->back();
     }
     //Cách 1 Sử dụng form request

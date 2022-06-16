@@ -25,7 +25,7 @@ class VlidationRegester extends FormRequest
     public function rules()
     {
         return [
-            'email' => ['required', 'min:3','max:20',
+            'email' => ['required', 'min:3','max:28',
                 Rule::unique('users')->withoutTrashed()],
             'password' => 'required',
         ];

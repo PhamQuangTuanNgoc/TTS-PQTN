@@ -31,6 +31,7 @@ Route::post('/registeruser',[LoginController::class,'register']);
 Route::get('/logout',[LoginController::class,'logout']);
 Route::get('/showuserchange',[LoginController::class,'showuserchange']);
 Route::post('/userchange',[LoginController::class,'userchange']);
+Route::get('/send-email',[LoginController::class,'send_email']);
 Auth::routes();
 
 //POST
